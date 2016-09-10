@@ -307,6 +307,8 @@ $.fn.cycle.API = {
     prepareTx: function( manual, fwd ) {
         var opts = this.opts();
         var after, curr, next, slideOpts, tx;
+        
+        if ( typeof opts === 'undefined' ) { return; } 
 
         if ( opts.slideCount < 2 ) {
             opts.timeoutId = 0;
